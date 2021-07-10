@@ -1,15 +1,14 @@
-setwd("/Users/Ken/Documents/Github/optimal_sequence/data")
+setwd("/Users/Ken/Documents/Github/optimal_sequence/scripts/")
 
-library(lpSolve)
-library(ROI)
-library(ROI.plugin.glpk)
 library(ompr)
 library(ompr.roi)
+library(ROI)
+library(ROI.plugin.glpk)
 library(magrittr)
 library(dplyr)
 
-cost<-as.matrix(read.csv(file = "cost.csv"))
-cost<-cost[1:5,2:6]
+cost<-as.matrix(read.csv(file = "../data/cost.csv"))
+#cost<-cost[1:5,2:6]
 
 n <- 5
 h = .25
