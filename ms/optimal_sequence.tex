@@ -51,6 +51,8 @@
 \usepackage[T1]{fontenc}
 \usepackage{bm}
 \usepackage{libertine}
+\usepackage{amsmath}
+\DeclareMathOperator*{\minimize}{minimize}
 
 \usepackage{chngcntr}
 
@@ -72,10 +74,43 @@ setwd(githubdir)
 
 \end{comment}
 
-\doublespacing
+Given the cost of a set of tickets on any given day is defined by matrix $c_{ij}$ where $i$ denotes ticket and $j$ denotes day. On which day should each ticket be purchased in order to minimize the total cost to purchase the tickets. 
 
+The maximum number of tickets that an employee can purchase in a day is $m$. And the daily wage of a person is $w$. And the number of people staffed is $n_j$.
 
+Decision Variables:
 
+$$
+$x_{ij} = 
+\begin{cases}
+      1 & \text{if ticket t is purchased on day j} \\
+      0 & \text{otherwise}
+\end{cases}
+$$
+
+Minimize the objective Function:
+
+\begin{align*}
+\Sigma_j \Sigma_i (c_{ij} + h*e) x_{ij}
+\end{align*}
+
+subject to the following constraints:
+
+\begin{align*}
+    \Sigma_j x_{ij} == 1\\
+    p_{ij} == 1\\
+    \Sigma_i h * x_{ij} \leq v_j
+\end{align*}
+
+Given $c_{ij}$, $p_{ij}$, $w$, $$, ...
+
+$$
+$p_{ij} = 
+\begin{cases}
+      1 & \text{if ticket t can be purchased on day j} \\
+      0 & \text{otherwise}
+\end{cases}
+$$\\
 
 
 What is the optimal order in which to service orders assuming a fixed budget?
